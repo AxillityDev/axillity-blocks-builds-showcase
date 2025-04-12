@@ -9,9 +9,9 @@ const ProjectsSection = () => {
     {
       title: "OpenMC",
       description: "Contributing to the OpenMC project with custom plugins and server optimization for the Minecraft community.",
-      imageSrc: "https://wiki.openmc.fr/~gitbook/image?url=https%3A%2F%2F3559816266-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252F51qamS5Y3oZcOseQ9hfq%252Fsites%252Fsite_62BNZ%252Flogo%252FNRM5KGWUDUb8d7g74nwD%252FGroup%25201.png%3Falt%3Dmedia%26token%3Dbe321232-f7b9-4ac4-9b33-fba96c3222f5&width=160&dpr=3&quality=100&sign=7d26d74d&sv=3",
+      imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy2tLNkVSFhpMZ_Ren4nqLAjJ2gztaUmJB1g&s",
       tags: ["Java", "Open Source", "Game Design", "GitHub"],
-      githubUrl: "https://github.com/OpenMC/plugin",
+      githubUrl: "https://github.com/ServeurOpenMC/",
     },
     {
       title: "Creatoreq",
@@ -41,7 +41,7 @@ const ProjectsSection = () => {
         
         <div className="text-center mt-12">
           <a 
-            href="https://github.com/OpenMC" 
+            href="https://github.com/AxillityDev" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 hover:text-primary transition-colors"
