@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Check, Github, Gamepad2, Code, Server, Youtube, Discord, Mail } from 'lucide-react';
+import { ArrowDown, Check, Github, Gamepad2, Code, Server, Youtube, MessageSquare, Mail } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import ProjectCard from '@/components/ProjectCard';
 import Footer from '@/components/Footer';
@@ -20,7 +20,7 @@ const Index = () => {
     {
       title: "OpenMC",
       description: "Contributing to the OpenMC project with custom plugins and server optimization for the Minecraft community.",
-      imageSrc: "https://wiki.openmc.fr/~gitbook/image?url=https%3A%2F%2F3559816266-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252F51qamS5Y3oZcOseQ9hfq%252Fsites%252Fsite_62BNZ%252Flogo%252FNRM5KGWUDUb8d7g74nwD%252FGroup%25201.png%3Falt%3Dmedia%26token%3Dbe321232-f7b9-4ac4-9b33-fba96c3222f5&width=160&dpr=3&quality=100&sign=7d26d74d&sv=2",
+      imageSrc: "https://wiki.openmc.fr/~gitbook/image?url=https%3A%2F%2F3559816266-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252F51qamS5Y3oZcOseQ9hfq%252Fsites%252Fsite_62BNZ%252Flogo%252FNRM5KGWUDUb8d7g74nwD%252FGroup%25201.png%3Falt%3Dmedia%26token%3Dbe321232-f7b9-4ac4-9b33-fba96c3222f5&width=160&dpr=3&quality=100&sign=7d26d74d&sv=3",
       tags: ["Java", "Open Source", "Game Design", "GitHub"],
       githubUrl: "https://github.com/OpenMC/plugin",
     },
@@ -181,7 +181,7 @@ const Index = () => {
           <div className="minecraft-container p-8">
             <div className="flex flex-col items-center justify-center gap-6">
               <div className="flex items-center gap-3">
-                <Discord className="h-6 w-6 text-primary" />
+                <MessageSquare className="h-6 w-6 text-primary" />
                 <span className="text-lg font-bold">axillityz</span>
               </div>
               
@@ -195,7 +195,7 @@ const Index = () => {
               <div className="mt-6 w-full max-w-md flex flex-col items-center">
                 <div className="minecraft-btn w-full text-center">
                   <a href="https://discord.com/users/axillityz" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                    <Discord className="h-5 w-5" />
+                    <MessageSquare className="h-5 w-5" />
                     <span>Message on Discord</span>
                   </a>
                 </div>
