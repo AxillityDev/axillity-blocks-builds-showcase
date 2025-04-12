@@ -55,10 +55,10 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 143 64% 24%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 26 90% 37%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -93,6 +93,23 @@
     @apply bg-background text-foreground;
     font-family: 'Minecraft', 'Courier New', monospace;
     image-rendering: pixelated;
+  }
+  
+  /* Dark mode styling */
+  .dark .minecraft-container {
+    @apply bg-[#555555] border-[#222222] shadow-[inset_-2px_-2px_0_0_#333333,inset_2px_2px_0_0_#777777];
+  }
+  
+  .dark .minecraft-container-dark {
+    @apply bg-[#333333] border-[#222222] shadow-[inset_-2px_-2px_0_0_#222222,inset_2px_2px_0_0_#666666];
+  }
+  
+  .dark .minecraft-btn {
+    @apply bg-[#317526] border-[#1e4016] text-white;
+  }
+  
+  .dark .text-black {
+    @apply text-white;
   }
 }
 
@@ -166,6 +183,49 @@
     transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
     box-shadow: 0 15px 25px rgba(0,0,0,0.2);
   }
+  
+  /* New Minecraft 3D rotation animation */
+  .minecraft-3d-rotate {
+    animation: minecraft-3d-rotate 20s infinite linear;
+    transform-style: preserve-3d;
+  }
+  
+  /* Falling blocks animation */
+  .falling-blocks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .falling-blocks::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 200px);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Crect width='16' height='16' x='2' y='2' fill='%2361AF3E' fill-opacity='0.1' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E"), 
+                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Crect width='20' height='20' x='2' y='2' fill='%23825432' fill-opacity='0.1' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E"),
+                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect width='14' height='14' x='1' y='1' fill='%23808080' fill-opacity='0.1' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    animation: falling-blocks 20s linear infinite;
+  }
+
+  /* Responsive fixes for mobile */
+  @media (max-width: 640px) {
+    .minecraft-btn {
+      @apply px-4 py-2 text-sm;
+    }
+    
+    .minecraft-text {
+      @apply text-2xl;
+    }
+  }
 }
 
 /* Minecraft font - add before using */
@@ -204,6 +264,33 @@
   }
   75% {
     transform: translateX(5px);
+  }
+}
+
+@keyframes minecraft-3d-rotate {
+  0% {
+    transform: rotateY(0deg) translateY(0);
+  }
+  25% {
+    transform: rotateY(3deg) translateY(-5px);
+  }
+  50% {
+    transform: rotateY(0deg) translateY(0);
+  }
+  75% {
+    transform: rotateY(-3deg) translateY(-5px);
+  }
+  100% {
+    transform: rotateY(0deg) translateY(0);
+  }
+}
+
+@keyframes falling-blocks {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(100%);
   }
 }
 
