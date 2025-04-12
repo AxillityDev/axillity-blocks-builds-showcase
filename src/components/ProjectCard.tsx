@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Youtube } from 'lucide-react';
 
 interface ProjectCardProps {
   title: string;
@@ -8,6 +8,7 @@ interface ProjectCardProps {
   imageSrc: string;
   tags: string[];
   githubUrl?: string;
+  youtubeUrl?: string;
   liveUrl?: string;
 }
 
@@ -17,10 +18,11 @@ const ProjectCard = ({
   imageSrc, 
   tags,
   githubUrl,
+  youtubeUrl,
   liveUrl
 }: ProjectCardProps) => {
   return (
-    <div className="minecraft-container overflow-hidden transition-all duration-300 hover:-translate-y-1">
+    <div className="minecraft-container overflow-hidden transition-all duration-300 hover:scale-105 hover:-translate-y-1">
       <div className="h-48 overflow-hidden relative">
         <img 
           src={imageSrc} 
@@ -49,6 +51,11 @@ const ProjectCard = ({
           {githubUrl && (
             <a href={githubUrl} className="text-black hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
+            </a>
+          )}
+          {youtubeUrl && (
+            <a href={youtubeUrl} className="text-black hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+              <Youtube className="h-5 w-5" />
             </a>
           )}
           {liveUrl && (

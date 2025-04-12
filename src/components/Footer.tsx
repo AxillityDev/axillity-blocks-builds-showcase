@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, Youtube, Discord } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -13,8 +13,11 @@ const Footer = () => {
           </div>
           
           <div className="flex gap-4">
-            <a href="https://github.com/OpenMC" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+            <a href="https://github.com/OpenMC" target="_blank" rel="noopener noreferrer" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Github className="h-5 w-5 text-black" />
+            </a>
+            <a href="https://discord.com/users/axillityz" target="_blank" rel="noopener noreferrer" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+              <Discord className="h-5 w-5 text-black" />
             </a>
             <a href="#" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Twitter className="h-5 w-5 text-black" />
@@ -22,7 +25,7 @@ const Footer = () => {
             <a href="#" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Linkedin className="h-5 w-5 text-black" />
             </a>
-            <a href="mailto:contact@axillity.dev" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+            <a href="mailto:contact@Axillity.xyz" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Mail className="h-5 w-5 text-black" />
             </a>
           </div>
