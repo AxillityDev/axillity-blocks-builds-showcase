@@ -33,7 +33,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -91,13 +91,23 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Minecraft', 'Courier New', monospace;
+    image-rendering: pixelated;
   }
 }
 
 @layer components {
+  .minecraft-container {
+    @apply relative border-2 border-black bg-[#C6C6C6] shadow-[inset_-2px_-2px_0_0_#555,inset_2px_2px_0_0_#FFF];
+  }
+  
+  .minecraft-container-dark {
+    @apply relative border-2 border-[#555] bg-[#8B8B8B] shadow-[inset_-2px_-2px_0_0_#555,inset_2px_2px_0_0_#FFF];
+  }
+  
   .pixel-border {
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
-    position: relative;
+    @apply border-2 border-black;
+    image-rendering: pixelated;
   }
 
   .pixel-border::after {
@@ -107,29 +117,46 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 4px,
-      rgba(0, 0, 0, 0.05) 4px,
-      rgba(0, 0, 0, 0.05) 8px
-    );
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQImWNgYGD4z8DAwMDAxAAFgQEK4gEHcwAAAABJRU5ErkJggg==") repeat;
     pointer-events: none;
-    opacity: 0.3;
+    opacity: 0.05;
+    z-index: 1;
   }
   
   .minecraft-btn {
-    @apply font-medium px-6 py-3 rounded-md transition-all duration-200 bg-primary text-primary-foreground inline-block;
-    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2);
+    @apply relative font-medium px-6 py-3 border-b-4 border-r-4 border-black bg-primary text-primary-foreground transition-all duration-75 inline-block;
   }
   
   .minecraft-btn:hover {
-    @apply -translate-y-1;
-    box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.2);
+    @apply -translate-y-1 bg-primary/90;
   }
   
   .minecraft-btn:active {
-    @apply translate-y-1;
-    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+    @apply translate-y-0 border-b-2 border-r-2;
+  }
+  
+  .dirt-bg {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABQSURBVDhPYxgFwwD8//9/vc/JEzv9Tp3Y4Xvy5H+fU6dAGMT2PXUKLAZTgwJA8jZnz86EGYKOYWrQAUwNVoxi6zLJxsAwVsUoGAUEAQMDAGs5UVYC/kuSAAAAAElFTkSuQmCC");
+  }
+  
+  .stone-bg {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABiSURBVDhPpc7BCYAwDEbhZBFxCkdxA0dwTk/ZIKcU8lIbUFv14YfkpZ28lqLZbI4BRnsdVccZ24d2A8S0pR0gfBRaB5BbRKsAcg8dCkC2DwWADNv6C8CejQKA/SzUmM3msm0OKF/AdOHg4AAAAABJRU5ErkJggg==");
+  }
+  
+  .grass-bg {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABpSURBVDhPpc6xDYAwDETRZBGxCqOwARuwJyNkgYwAgRSBBCiW+JJLcWrfvTiU1G1d1zFAqJboLiCl9CzLAOPAOsA4MApsA1tb/DOA9+mPA4xj9d8BTEvkAONY/XeAaSn/HUBpBihN7nUDGX98AOmz7IEAAAAASUVORK5CYII=");
+  }
+  
+  .wood-bg {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABUSURBVDhPYxgFOID//6f7nTu33vfcuf9Q/B8CzwDx+f8gDOL7nT8PVoMVgyQDgAb8h2GYZnQMUgM3gKAaDExQDQzoakYBQYA3DEZB/wMDA1YYAIW79nU/9EEsAAAAAElFTkSuQmCC");
   }
 }
+
+/* Minecraft font - add before using */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('https://fonts.cdnfonts.com/s/38969/Minecraft.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
