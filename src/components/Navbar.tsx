@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { Pick, Code, User, Mail } from 'lucide-react';
+import { Pickaxe, Code, User, Mail } from 'lucide-react';
 
 const Navbar = () => {
   return (
     <nav className="fixed top-0 z-50 w-full py-3 minecraft-container">
       <div className="container mx-auto flex items-center justify-between px-4">
         <a href="#" className="text-xl font-bold flex items-center gap-2">
-          <Pick className="h-6 w-6 text-primary" />
+          <Pickaxe className="h-6 w-6 text-primary" />
           <span className="text-black">Axillity</span>
         </a>
         
