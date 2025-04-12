@@ -12,18 +12,13 @@ const Footer = () => {
           </div>
           
           <div className="flex gap-4">
-            <a href="https://github.com/OpenMC" target="_blank" rel="noopener noreferrer" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+            <a href="https://github.com/AxillityDev" target="_blank" rel="noopener noreferrer" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Github className="h-5 w-5 text-black" />
             </a>
             <a href="https://discord.com/users/axillityz" target="_blank" rel="noopener noreferrer" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <MessageSquare className="h-5 w-5 text-black" />
             </a>
-            <a href="#" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-              <Twitter className="h-5 w-5 text-black" />
-            </a>
-            <a href="#" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-              <Linkedin className="h-5 w-5 text-black" />
-            </a>
+         </a>
             <a href="mailto:contact@Axillity.xyz" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Mail className="h-5 w-5 text-black" />
             </a>
