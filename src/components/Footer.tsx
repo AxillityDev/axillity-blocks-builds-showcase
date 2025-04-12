@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail, Youtube, Discord } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, Youtube, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -17,7 +16,7 @@ const Footer = () => {
               <Github className="h-5 w-5 text-black" />
             </a>
             <a href="https://discord.com/users/axillityz" target="_blank" rel="noopener noreferrer" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-              <Discord className="h-5 w-5 text-black" />
+              <MessageSquare className="h-5 w-5 text-black" />
             </a>
             <a href="#" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Twitter className="h-5 w-5 text-black" />

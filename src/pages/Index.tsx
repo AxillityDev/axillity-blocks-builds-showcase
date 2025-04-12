@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowDown, Check, Github, Gamepad2, Code, Server, Youtube, Discord, Mail } from 'lucide-react';
 import Navbar from '@/components/Navbar';

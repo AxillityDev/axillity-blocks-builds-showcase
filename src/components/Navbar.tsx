@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Pickaxe, Code, User, Mail, Discord } from 'lucide-react';
+import { Pickaxe, Code, User, Mail, MessageSquare } from 'lucide-react';
 
 const Navbar = () => {
   return (
