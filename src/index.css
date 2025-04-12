@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -93,6 +92,15 @@
     @apply bg-background text-foreground;
     font-family: 'Minecraft', 'Courier New', monospace;
     image-rendering: pixelated;
+  }
+  
+  /* Theme transition */
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .theme-loading {
+    @apply fixed inset-0 bg-background flex items-center justify-center;
   }
   
   /* Dark mode styling */
@@ -294,6 +302,52 @@
   }
 }
 
+/* New Minecraft animations */
+@keyframes minecraft-dig {
+  0%, 100% { 
+    transform: rotate(0deg); 
+  }
+  25% { 
+    transform: rotate(-15deg) scale(0.95); 
+  }
+  75% { 
+    transform: rotate(15deg) scale(0.95);
+  }
+}
+
+@keyframes minecraft-pixelate {
+  0%, 100% {
+    image-rendering: pixelated;
+    filter: none;
+  }
+  50% {
+    filter: blur(1px);
+  }
+}
+
+@keyframes minecraft-build {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes minecraft-place-block {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .minecraft-shake {
   animation: minecraft-shake 0.5s ease infinite;
 }
@@ -304,4 +358,64 @@
 
 .minecraft-pulse {
   animation: minecraft-pulse 2s ease infinite;
+}
+
+.minecraft-dig {
+  animation: minecraft-dig 0.8s ease infinite;
+}
+
+.minecraft-pixelate {
+  animation: minecraft-pixelate 2s ease infinite;
+}
+
+.minecraft-build {
+  animation: minecraft-build 0.5s ease forwards;
+}
+
+.minecraft-place-block {
+  animation: minecraft-place-block 0.3s ease forwards;
+}
+
+/* Animation delays for staggered animations */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+  
+  .grid {
+    @apply gap-6;
+  }
+  
+  .text-4xl {
+    @apply text-3xl;
+  }
+  
+  .text-3xl {
+    @apply text-2xl;
+  }
+  
+  .text-2xl {
+    @apply text-xl;
+  }
 }
