@@ -12,6 +12,6 @@ if (!rootElement) {
 } else {
   createRoot(rootElement).render(
     <App/>
-    <Toaster/>
+    <Toaster>
   );
 }
