@@ -1,6 +1,10 @@
 
 import React from 'react';
 import { Code, User, Mail } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
+
+const Navbar = () => {
+  const { theme } = useTheme();
   
   return (
     <nav className={`fixed top-0 z-50 w-full py-3 minecraft-container ${theme === 'dark' ? 'dark' : ''}`}>
@@ -35,5 +39,6 @@ import { Code, User, Mail } from 'lucide-react';
       </div>
     </nav>
   );
+};
 
 export default Navbar;
