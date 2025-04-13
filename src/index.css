@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,34 +7,24 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 142 76% 36%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 26 100% 50%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 353 86% 54%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0;
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -47,28 +38,20 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 143 64% 24%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 26 90% 37%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -92,51 +75,15 @@
     @apply bg-background text-foreground;
     font-family: 'Minecraft', 'Courier New', monospace;
     image-rendering: pixelated;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
   }
   
-  /* Improve loading experience */
   .theme-transition {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
   .theme-loading {
     @apply fixed inset-0 bg-background flex items-center justify-center;
-  }
-  
-  /* Improved dark mode containers */
-  .dark .minecraft-container {
-    @apply bg-[#555555] border-[#222222] shadow-[inset_-2px_-2px_0_0_#333333,inset_2px_2px_0_0_#777777];
-  }
-  
-  .dark .minecraft-container-dark {
-    @apply bg-[#333333] border-[#222222] shadow-[inset_-2px_-2px_0_0_#222222,inset_2px_2px_0_0_#666666];
-  }
-  
-  .dark .minecraft-btn {
-    @apply bg-[#317526] border-[#1e4016] text-white;
-  }
-  
-  .dark .text-black {
-    @apply text-white;
-  }
-  
-  /* Fix for focus and accessibility */
-  a:focus, button:focus {
-    @apply outline-none ring-2 ring-primary;
-  }
-  
-  /* Improved scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-muted;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-primary border-2 border-background;
   }
 }
 
@@ -152,127 +99,49 @@
   .minecraft-btn {
     @apply bg-[#548A34] border-[#3d6825] border-2 p-2 rounded-lg text-white transition-all;
   }
-  
-  .minecraft-btn:hover {
-    @apply bg-[#417f2b] border-[#356425] transform translate-y-[-2px];
-  }
-  
-  .minecraft-btn:active {
-    @apply translate-y-0 border-b-2 border-r-2 transform-none;
-  }
-  
-  .minecraft-text {
-    text-shadow: 2px 2px 0 #000;
-    @apply animate-pulse;
-  }
-  
-  /* Block textures */
-  .dirt-bg {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABQSURBVDhPYxgFwwD8//9/vc/JEzv9Tp3Y4Xvy5H+fU6dAGMT2PXUKLAZTgwJA8jZnz86EGYKOYWrQAUwNVoxi6zLJxsAwVsUoGAUEAQMDAGs5UVYC/kuSAAAAAElFTkSuQmCC");
-  }
-  
-  .stone-bg {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABiSURBVDhPpc7BCYAwDEbhZBFxCkdxA0dwTk/ZIKcU8lIbUFv14YfkpZ28lqLZbI4BRnsdVccZ24d2A8S0pR0gfBRaB5BbRKsAcg8dCkC2DwWADNv6C8CejQKA/SzUmM3msm0OKF/AdOHg4AAAAABJRU5ErkJggg==");
-  }
-  
-  .grass-bg {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABpSURBVDhPpc6xDYAwDETRZBGxCqOwARuwJyNkgYwAgRSBBCiW+JJLcWrfvTiU1G1d1zFAqJboLiCl9CzLAOPAOsA4MApsA1tb/DOA9+mPA4xj9d8BTEvkAONY/XeAaSn/HUBpBihN7nUDGX98AOmz7IEAAAAASUVORK5CYII=");
-  }
-  
-  .wood-bg {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABUSURBVDhPYxgFOID//6f7nTu33vfcuf9Q/B8CzwDx+f8gDOL7nT8PVoMVgyQDgAb8h2GYZnQMUgM3gKAaDExQDQzoakYBQYA3DEZB/wMDA1YYAIW79nU/9EEsAAAAAElFTkSuQmCC");
-  }
-  
-  /* Enhanced block hover animation */
-  .hover-block {
-    transform-style: preserve-3d;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-  }
-  
-  .hover-block:hover {
-    transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-  }
-  
-  .hover-block:hover::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background-color: rgba(0,0,0,0.2);
-    z-index: -1;
-  }
-  
-  /* 3D rotation animation */
-  .minecraft-3d-rotate {
-    animation: minecraft-3d-rotate 20s infinite linear;
-    transform-style: preserve-3d;
-  }
-  
-  /* Falling blocks animation - improved */
-  .falling-blocks {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 1;
-  }
-  
-  .falling-blocks::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 200px);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Crect width='16' height='16' x='2' y='2' fill='%2361AF3E' fill-opacity='0.1' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E"), 
-                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Crect width='20' height='20' x='2' y='2' fill='%23825432' fill-opacity='0.1' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E"),
-                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect width='14' height='14' x='1' y='1' fill='%23808080' fill-opacity='0.1' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    animation: falling-blocks 20s linear infinite;
-  }
-
-  /* Responsive improvements */
-  @media (max-width: 640px) {
-    .minecraft-btn {
-      @apply px-4 py-2 text-sm;
-    }
-    
-    .minecraft-text {
-      @apply text-2xl;
-    }
-    
-    .container {
-      @apply px-4;
-    }
-    
-    h1 {
-      @apply text-3xl;
-    }
-    
-    h2 {
-      @apply text-2xl;
-    }
-    
-    p {
-      @apply text-base;
-    }
-  }
-  
-  /* Toast notification style */
-  .minecraft-toast {
-    @apply minecraft-container border-2 border-black p-4 shadow-lg;
-    animation: minecraft-place-block 0.3s ease forwards;
-  }
 }
 
-/* Minecraft font - add before using */
+/* Dark mode overrides */
+.dark .minecraft-container {
+  @apply bg-[#555555] border-[#222222];
+  box-shadow: inset -2px -2px 0 0 #333333, inset 2px 2px 0 0 #777777;
+}
+
+.dark .minecraft-container-dark {
+  @apply bg-[#333333] border-[#222222];
+  box-shadow: inset -2px -2px 0 0 #222222, inset 2px 2px 0 0 #666666;
+}
+
+.dark .minecraft-btn {
+  @apply bg-[#317526] border-[#1e4016] text-white;
+}
+
+.dark .text-black {
+  @apply text-white;
+}
+
+.dark img {
+  @apply brightness-90;
+}
+
+/* Block textures */
+.dirt-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABQSURBVDhPYxgFwwD8//9/vc/JEzv9Tp3Y4Xvy5H+fU6dAGMT2PXUKLAZTgwJA8jZnz86EGYKOYWrQAUwNVoxi6zLJxsAwVsUoGAUEAQMDAGs5UVYC/kuSAAAAAElFTkSuQmCC");
+}
+
+.stone-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABiSURBVDhPpc7BCYAwDEbhZBFxCkdxA0dwTk/ZIKcU8lIbUFv14YfkpZ28lqLZbI4BRnsdVccZ24d2A8S0pR0gfBRaB5BbRKsAcg8dCkC2DwWADNv6C8CejQKA/SzUmM3msm0OKF/AdOHg4AAAAABJRU5ErkJggg==");
+}
+
+.grass-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABpSURBVDhPpc6xDYAwDETRZBGxCqOwARuwJyNkgYwAgRSBBCiW+JJLcWrfvTiU1G1d1zFAqJboLiCl9CzLAOPAOsA4MApsA1tb/DOA9+mPA4xj9d8BTEvkAONY/XeAaSn/HUBpBihN7nUDGX98AOmz7IEAAAAASUVORK5CYII=");
+}
+
+.wood-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABUSURBVDhPYxgFOID//6f7nTu33vfcuf9Q/B8CzwDx+f8gDOL7nT8PVoMVgyQDgAb8h2GYZnQMUgM3gKAaDExQDQzoakYBQYA3DEZB/wMDA1YYAIW79nU/9EEsAAAAAElFTkSuQmCC");
+}
+
+/* Minecraft font */
 @font-face {
   font-family: 'Minecraft';
   src: url('https://fonts.cdnfonts.com/s/38969/Minecraft.woff') format('woff');
@@ -280,242 +149,52 @@
   font-style: normal;
 }
 
-/* Minecraft specific animations */
+/* Animations */
 @keyframes minecraft-bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes minecraft-pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
 @keyframes minecraft-shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
 
 @keyframes minecraft-3d-rotate {
-  0% {
-    transform: rotateY(0deg) translateY(0);
-  }
-  25% {
-    transform: rotateY(3deg) translateY(-5px);
-  }
-  50% {
-    transform: rotateY(0deg) translateY(0);
-  }
-  75% {
-    transform: rotateY(-3deg) translateY(-5px);
-  }
-  100% {
-    transform: rotateY(0deg) translateY(0);
-  }
+  0% { transform: rotateY(0deg) translateY(0); }
+  25% { transform: rotateY(3deg) translateY(-5px); }
+  50% { transform: rotateY(0deg) translateY(0); }
+  75% { transform: rotateY(-3deg) translateY(-5px); }
+  100% { transform: rotateY(0deg) translateY(0); }
 }
 
-@keyframes falling-blocks {
-  0% {
-    transform: translateY(-100px);
-  }
-  100% {
-    transform: translateY(100%);
-  }
+/* Animation classes */
+.minecraft-shake { animation: minecraft-shake 0.5s ease infinite; }
+.minecraft-bounce { animation: minecraft-bounce 1s ease infinite; }
+.minecraft-pulse { animation: minecraft-pulse 2s ease infinite; }
+.minecraft-3d-rotate { animation: minecraft-3d-rotate 20s infinite linear; transform-style: preserve-3d; }
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .minecraft-btn { padding: 0.5rem 1rem; font-size: 0.875rem; }
+  .minecraft-text { font-size: 1.5rem; }
+  .container { padding-left: 1rem; padding-right: 1rem; }
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+  p { font-size: 1rem; }
 }
 
-/* Enhanced Minecraft animations */
-@keyframes minecraft-dig {
-  0%, 100% { 
-    transform: rotate(0deg); 
-  }
-  25% { 
-    transform: rotate(-15deg) scale(0.95); 
-  }
-  75% { 
-    transform: rotate(15deg) scale(0.95);
-  }
-}
-
-@keyframes minecraft-pixelate {
-  0%, 100% {
-    image-rendering: pixelated;
-    filter: none;
-  }
-  50% {
-    filter: blur(1px);
-  }
-}
-
-@keyframes minecraft-build {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes minecraft-place-block {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Menu animation */
-@keyframes minecraft-menu-open {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Block break animation */
-@keyframes minecraft-block-break {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(0.9) rotate(5deg);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.5) rotate(15deg);
-  }
-}
-
-/* New animation classes */
-.minecraft-shake {
-  animation: minecraft-shake 0.5s ease infinite;
-}
-
-.minecraft-bounce {
-  animation: minecraft-bounce 1s ease infinite;
-}
-
-.minecraft-pulse {
-  animation: minecraft-pulse 2s ease infinite;
-}
-
-.minecraft-dig {
-  animation: minecraft-dig 0.8s ease infinite;
-}
-
-.minecraft-pixelate {
-  animation: minecraft-pixelate 2s ease infinite;
-}
-
-.minecraft-build {
-  animation: minecraft-build 0.5s ease forwards;
-}
-
-.minecraft-place-block {
-  animation: minecraft-place-block 0.3s ease forwards;
-}
-
-.minecraft-menu-open {
-  animation: minecraft-menu-open 0.3s ease forwards;
-}
-
-.minecraft-block-break {
-  animation: minecraft-block-break 0.8s ease forwards;
-}
-
-/* Animation delays */
-.delay-100 {
-  animation-delay: 0.1s;
-}
-
-.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.delay-300 {
-  animation-delay: 0.3s;
-}
-
-.delay-400 {
-  animation-delay: 0.4s;
-}
-
-.delay-500 {
-  animation-delay: 0.5s;
-}
-
-/* More responsive improvements */
 @media (max-width: 768px) {
-  .container {
-    @apply px-4;
-  }
-  
-  .grid {
-    @apply gap-6;
-  }
-  
-  .text-4xl {
-    @apply text-3xl;
-  }
-  
-  .text-3xl {
-    @apply text-2xl;
-  }
-  
-  .text-2xl {
-    @apply text-xl;
-  }
-  
-  /* Improved small screen spacing */
-  section {
-    @apply py-12;
-  }
-  
-  .py-20 {
-    @apply py-12;
-  }
-  
-  .pt-36 {
-    @apply pt-24;
-  }
-  
-  /* Improved touch targets */
-  button, a {
-    @apply min-h-[44px] px-4;
-  }
-}
-
-/* Improve accessibility for dark mode */
-.dark .text-black {
-  @apply text-white;
-}
-
-.dark img {
-  @apply brightness-90;
+  .container { padding-left: 1rem; padding-right: 1rem; }
+  .grid { gap: 1.5rem; }
+  section { padding-top: 3rem; padding-bottom: 3rem; }
+  .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+  .pt-36 { padding-top: 6rem; }
+  button, a { min-height: 44px; padding-left: 1rem; padding-right: 1rem; }
 }

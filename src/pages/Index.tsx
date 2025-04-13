@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTheme } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -12,13 +12,13 @@ import { showMinecraftNotification } from '@/components/MinecraftNotification';
 const Index = () => {
   const { theme } = useTheme();
   
-  useEffect(() => {
+  React.useEffect(() => {
     // Show a welcome notification when the page loads
     const timer = setTimeout(() => {
       showMinecraftNotification(
         'Website Loaded Successfully!',
         'Welcome to my Minecraft developer portfolio',
-        'info'
+        'achievement'
       );
     }, 1000);
     

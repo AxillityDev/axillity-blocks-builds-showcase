@@ -1,33 +1,47 @@
+
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail, Youtube, MessageSquare } from 'lucide-react';
+import { GithubIcon, TwitterIcon, LinkedinIcon } from 'lucide-react';
+import OpenMCLogo from './OpenMCLogo';
 
 const Footer = () => {
   return (
-    <footer className="stone-bg py-12 text-white">
+    <footer className="bg-background py-8 border-t border-muted">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold">Axillity</h3>
-            <p className="mt-2">Minecraft Developer</p>
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="flex items-center mb-4 md:mb-0">
+            <div className="mr-3">
+              <OpenMCLogo size="sm" />
+            </div>
+            <span className="text-lg font-bold">OpenMC Dev</span>
           </div>
           
-          <div className="flex gap-4">
-            <a href="https://github.com/AxillityDev" target="_blank" rel="noopener noreferrer" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-              <Github className="h-5 w-5 text-black" />
+          <div className="flex flex-col md:flex-row items-center mb-4 md:mb-0">
+            <a href="#home" className="mx-2 my-1 md:my-0 hover:text-primary transition-colors">Home</a>
+            <a href="#about" className="mx-2 my-1 md:my-0 hover:text-primary transition-colors">About</a>
+            <a href="#projects" className="mx-2 my-1 md:my-0 hover:text-primary transition-colors">Projects</a>
+            <a href="#contact" className="mx-2 my-1 md:my-0 hover:text-primary transition-colors">Contact</a>
+          </div>
+          
+          <div className="flex space-x-4">
+            <a href="https://github.com" className="hover:text-primary transition-colors">
+              <GithubIcon className="w-5 h-5" />
             </a>
-            <a href="https://discord.com/users/axillityz" target="_blank" rel="noopener noreferrer" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-              <MessageSquare className="h-5 w-5 text-black" />
+            <a href="https://twitter.com" className="hover:text-primary transition-colors">
+              <TwitterIcon className="w-5 h-5" />
             </a>
-         </a>
-            <a href="mailto:contact@Axillity.xyz" className="h-10 w-10 minecraft-container flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-              <Mail className="h-5 w-5 text-black" />
+            <a href="https://linkedin.com" className="hover:text-primary transition-colors">
+              <LinkedinIcon className="w-5 h-5" />
             </a>
           </div>
         </div>
         
-        <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm">
-          <p>© {new Date().getFullYear()} Axillity. All rights reserved.</p>
-          <p className="mt-2">Built with passion for Minecraft development.</p>
+        <div className="text-center mt-8">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} OpenMC Development. All rights reserved.
+          </p>
+          <p className="text-xs text-muted-foreground mt-1">
+            Made with 💚 using React and Minecraft-inspired design
+          </p>
         </div>
       </div>
     </footer>
