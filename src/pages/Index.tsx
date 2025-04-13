@@ -1,6 +1,5 @@
 
-import React from 'react';
-import { useTheme } from '@/components/ThemeProvider';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/sections/HeroSection';
@@ -8,12 +7,9 @@ import AboutSection from '@/components/sections/AboutSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import { showMinecraftNotification } from '@/components/MinecraftNotification';
-import CornerThemeToggle from '@/components/CornerThemeToggle';
 
 const Index = () => {
-  const { theme } = useTheme();
-  
-  React.useEffect(() => {
+  useEffect(() => {
     // Show a welcome notification when the page loads
     const timer = setTimeout(() => {
       showMinecraftNotification(
@@ -34,7 +30,6 @@ const Index = () => {
       <ProjectsSection />
       <ContactSection />
       <Footer />
-      <CornerThemeToggle />
     </div>
   );
 };

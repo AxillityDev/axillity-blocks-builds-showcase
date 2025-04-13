@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { useToast } from "@/hooks/use-toast";
+import { createRoot } from 'react-dom/client';
 
 type NotificationType = 'achievement' | 'info' | 'warning' | 'error';
 
@@ -62,17 +63,16 @@ export const showMinecraftNotification = (
     }
   };
   
-  // Render the notification component
-  const notification = <MinecraftNotification 
-    title={title} 
-    description={description} 
-    type={type} 
-    duration={duration} 
-  />;
-  
-  // Use ReactDOM to render and then clean up
-  const ReactDOM = require('react-dom');
-  ReactDOM.createRoot(container).render(notification);
+  // Render the notification component using createRoot from react-dom/client
+  const root = createRoot(container);
+  root.render(
+    <MinecraftNotification 
+      title={title} 
+      description={description} 
+      type={type} 
+      duration={duration} 
+    />
+  );
   
   // Clean up after duration
   setTimeout(cleanup, duration + 1000);

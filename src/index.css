@@ -5,37 +5,6 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 142 76% 36%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 26 100% 50%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 353 86% 54%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
@@ -63,6 +32,7 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0;
   }
 }
 
@@ -77,27 +47,19 @@
     image-rendering: pixelated;
     overflow-x: hidden;
   }
-  
-  .theme-transition {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .theme-loading {
-    @apply fixed inset-0 bg-background flex items-center justify-center;
-  }
 }
 
 @layer components {
   .minecraft-container {
-    @apply relative border-2 border-black bg-[#C6C6C6] shadow-[inset_-2px_-2px_0_0_#555555,inset_2px_2px_0_0_#BBBBBB] rounded-lg;
+    @apply relative border-2 border-black bg-[#555555] shadow-[inset_-2px_-2px_0_0_#333333,inset_2px_2px_0_0_#777777] rounded-lg;
   }
 
   .minecraft-container-dark {
-    @apply relative border-2 border-black bg-[#3A3A3A] shadow-[inset_-2px_-2px_0_0_#222222,inset_2px_2px_0_0_#666666] rounded-lg;
+    @apply relative border-2 border-black bg-[#333333] shadow-[inset_-2px_-2px_0_0_#222222,inset_2px_2px_0_0_#666666] rounded-lg;
   }
 
   .minecraft-btn {
-    @apply bg-[#548A34] border-[#3d6825] border-2 p-2 rounded-lg text-white transition-all;
+    @apply bg-[#317526] border-[#1e4016] border-2 p-2 rounded-lg text-white transition-all;
   }
   
   /* Minecraft-styled switch */
@@ -116,29 +78,6 @@
   .minecraft-switch [data-state="unchecked"] .bg-background {
     @apply bg-[#ddd];
   }
-}
-
-/* Dark mode overrides */
-.dark .minecraft-container {
-  @apply bg-[#555555] border-[#222222];
-  box-shadow: inset -2px -2px 0 0 #333333, inset 2px 2px 0 0 #777777;
-}
-
-.dark .minecraft-container-dark {
-  @apply bg-[#333333] border-[#222222];
-  box-shadow: inset -2px -2px 0 0 #222222, inset 2px 2px 0 0 #666666;
-}
-
-.dark .minecraft-btn {
-  @apply bg-[#317526] border-[#1e4016] text-white;
-}
-
-.dark .text-black {
-  @apply text-white;
-}
-
-.dark img {
-  @apply brightness-90;
 }
 
 /* Block textures */
@@ -219,19 +158,57 @@
 
 /* Responsive improvements */
 @media (max-width: 640px) {
-  .minecraft-btn { padding: 0.5rem 1rem; font-size: 0.875rem; }
+  .minecraft-btn { 
+    padding: 0.5rem 1rem; 
+    font-size: 0.875rem; 
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
   .minecraft-text { font-size: 1.5rem; }
-  .container { padding-left: 1rem; padding-right: 1rem; }
-  h1 { font-size: 1.875rem; }
-  h2 { font-size: 1.5rem; }
-  p { font-size: 1rem; }
+  .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  p { font-size: 0.875rem; }
+  section { padding: 2rem 0.5rem; }
 }
 
 @media (max-width: 768px) {
-  .container { padding-left: 1rem; padding-right: 1rem; }
-  .grid { gap: 1.5rem; }
-  section { padding-top: 3rem; padding-bottom: 3rem; }
-  .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
-  .pt-36 { padding-top: 6rem; }
-  button, a { min-height: 44px; padding-left: 1rem; padding-right: 1rem; }
+  .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .grid { gap: 1rem; }
+  section { padding-top: 2rem; padding-bottom: 2rem; }
+  .py-20 { padding-top: 2rem; padding-bottom: 2rem; }
+  .pt-36 { padding-top: 4rem; }
+  button, a { min-height: 44px; }
+  .text-xl { font-size: 1.15rem; }
+  .text-2xl { font-size: 1.35rem; }
+}
+
+/* Additional responsive improvements */
+@media (max-width: 480px) {
+  .container { 
+    padding-left: 0.5rem; 
+    padding-right: 0.5rem;
+    width: 100%; 
+  }
+  .minecraft-btn { 
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+  h1 { font-size: 1.25rem; }
+  h2 { font-size: 1.125rem; }
+  p { font-size: 0.75rem; }
+  .pt-36 { padding-top: 3.5rem; }
+}
+
+/* Make things touch-friendly */
+@media (pointer: coarse) {
+  button, a, [role="button"], input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .minecraft-btn {
+    padding: 0.75rem 1.25rem;
+  }
 }
