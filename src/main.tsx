@@ -11,7 +11,7 @@ if (!rootElement) {
   console.error("Root element not found");
 } else {
   createRoot(rootElement).render(
-    <App />
-    <Toaster />
+    <App/>
+    <Toaster/>
   );
 }
