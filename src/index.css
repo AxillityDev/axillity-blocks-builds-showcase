@@ -92,8 +92,10 @@
     @apply bg-background text-foreground;
     font-family: 'Minecraft', 'Courier New', monospace;
     image-rendering: pixelated;
+    overflow-x: hidden; /* Prevent horizontal scroll */
   }
   
+  /* Improve loading experience */
   .theme-transition {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
@@ -102,6 +104,7 @@
     @apply fixed inset-0 bg-background flex items-center justify-center;
   }
   
+  /* Improved dark mode containers */
   .dark .minecraft-container {
     @apply bg-[#555555] border-[#222222] shadow-[inset_-2px_-2px_0_0_#333333,inset_2px_2px_0_0_#777777];
   }
@@ -117,6 +120,24 @@
   .dark .text-black {
     @apply text-white;
   }
+  
+  /* Fix for focus and accessibility */
+  a:focus, button:focus {
+    @apply outline-none ring-2 ring-primary;
+  }
+  
+  /* Improved scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary border-2 border-background;
+  }
 }
 
 @layer components {
@@ -129,15 +150,15 @@
   }
 
   .minecraft-btn {
-    @apply bg-[#548A34] border-[#3d6825] border-2 p-2 rounded-lg text-white;
+    @apply bg-[#548A34] border-[#3d6825] border-2 p-2 rounded-lg text-white transition-all;
   }
   
   .minecraft-btn:hover {
-    @apply bg-[#417f2b] border-[#356425];
+    @apply bg-[#417f2b] border-[#356425] transform translate-y-[-2px];
   }
   
   .minecraft-btn:active {
-    @apply translate-y-0 border-b-2 border-r-2;
+    @apply translate-y-0 border-b-2 border-r-2 transform-none;
   }
   
   .minecraft-text {
@@ -145,6 +166,7 @@
     @apply animate-pulse;
   }
   
+  /* Block textures */
   .dirt-bg {
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABQSURBVDhPYxgFwwD8//9/vc/JEzv9Tp3Y4Xvy5H+fU6dAGMT2PXUKLAZTgwJA8jZnz86EGYKOYWrQAUwNVoxi6zLJxsAwVsUoGAUEAQMDAGs5UVYC/kuSAAAAAElFTkSuQmCC");
   }
@@ -161,10 +183,11 @@
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4yMfEgaZUAAABUSURBVDhPYxgFOID//6f7nTu33vfcuf9Q/B8CzwDx+f8gDOL7nT8PVoMVgyQDgAb8h2GYZnQMUgM3gKAaDExQDQzoakYBQYA3DEZB/wMDA1YYAIW79nU/9EEsAAAAAElFTkSuQmCC");
   }
   
-  /* Block hover animation */
+  /* Enhanced block hover animation */
   .hover-block {
     transform-style: preserve-3d;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
   }
   
   .hover-block:hover {
@@ -172,13 +195,24 @@
     box-shadow: 0 15px 25px rgba(0,0,0,0.2);
   }
   
-  /* New Minecraft 3D rotation animation */
+  .hover-block:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: rgba(0,0,0,0.2);
+    z-index: -1;
+  }
+  
+  /* 3D rotation animation */
   .minecraft-3d-rotate {
     animation: minecraft-3d-rotate 20s infinite linear;
     transform-style: preserve-3d;
   }
   
-  /* Falling blocks animation */
+  /* Falling blocks animation - improved */
   .falling-blocks {
     position: absolute;
     top: 0;
@@ -204,7 +238,7 @@
     animation: falling-blocks 20s linear infinite;
   }
 
-  /* Responsive fixes for mobile */
+  /* Responsive improvements */
   @media (max-width: 640px) {
     .minecraft-btn {
       @apply px-4 py-2 text-sm;
@@ -213,6 +247,28 @@
     .minecraft-text {
       @apply text-2xl;
     }
+    
+    .container {
+      @apply px-4;
+    }
+    
+    h1 {
+      @apply text-3xl;
+    }
+    
+    h2 {
+      @apply text-2xl;
+    }
+    
+    p {
+      @apply text-base;
+    }
+  }
+  
+  /* Toast notification style */
+  .minecraft-toast {
+    @apply minecraft-container border-2 border-black p-4 shadow-lg;
+    animation: minecraft-place-block 0.3s ease forwards;
   }
 }
 
@@ -282,7 +338,7 @@
   }
 }
 
-/* New Minecraft animations */
+/* Enhanced Minecraft animations */
 @keyframes minecraft-dig {
   0%, 100% { 
     transform: rotate(0deg); 
@@ -328,6 +384,35 @@
   }
 }
 
+/* Menu animation */
+@keyframes minecraft-menu-open {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Block break animation */
+@keyframes minecraft-block-break {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.9) rotate(5deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(15deg);
+  }
+}
+
+/* New animation classes */
 .minecraft-shake {
   animation: minecraft-shake 0.5s ease infinite;
 }
@@ -356,7 +441,15 @@
   animation: minecraft-place-block 0.3s ease forwards;
 }
 
-/* Animation delays for staggered animations */
+.minecraft-menu-open {
+  animation: minecraft-menu-open 0.3s ease forwards;
+}
+
+.minecraft-block-break {
+  animation: minecraft-block-break 0.8s ease forwards;
+}
+
+/* Animation delays */
 .delay-100 {
   animation-delay: 0.1s;
 }
@@ -377,7 +470,7 @@
   animation-delay: 0.5s;
 }
 
-/* Responsive improvements */
+/* More responsive improvements */
 @media (max-width: 768px) {
   .container {
     @apply px-4;
@@ -398,4 +491,31 @@
   .text-2xl {
     @apply text-xl;
   }
+  
+  /* Improved small screen spacing */
+  section {
+    @apply py-12;
+  }
+  
+  .py-20 {
+    @apply py-12;
+  }
+  
+  .pt-36 {
+    @apply pt-24;
+  }
+  
+  /* Improved touch targets */
+  button, a {
+    @apply min-h-[44px] px-4;
+  }
+}
+
+/* Improve accessibility for dark mode */
+.dark .text-black {
+  @apply text-white;
+}
+
+.dark img {
+  @apply brightness-90;
 }
