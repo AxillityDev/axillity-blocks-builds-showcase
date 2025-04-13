@@ -18,7 +18,7 @@ const Index = () => {
     const timer = setTimeout(() => {
       showMinecraftNotification(
         'Website Loaded Successfully!',
-        'Welcome to my Minecraft developer portfolio',
+        'Welcome to Axillity\'s Minecraft developer portfolio',
         'achievement'
       );
     }, 1000);

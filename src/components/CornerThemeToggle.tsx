@@ -31,19 +31,19 @@ const CornerThemeToggle = () => {
       <div 
         onClick={toggleTheme}
         className={`
-          minecraft-container p-2 cursor-pointer transition-transform flex items-center gap-2
+          minecraft-container p-3 cursor-pointer transition-transform flex items-center gap-2
           ${isAnimating ? 'minecraft-dig' : 'hover:scale-105'}
         `}
       >
         {theme === 'light' ? (
           <>
-            <Sun className="h-5 w-5 text-yellow-500 minecraft-bounce" />
-            <Switch checked={false} className="minecraft-switch" />
+            <Sun className="h-6 w-6 text-yellow-500 minecraft-bounce" />
+            <Switch checked={false} />
           </>
         ) : (
           <>
-            <Moon className="h-5 w-5 text-blue-400 minecraft-pulse" />
-            <Switch checked={true} className="minecraft-switch" />
+            <Moon className="h-6 w-6 text-blue-400 minecraft-pulse" />
+            <Switch checked={true} />
           </>
         )}
       </div>
