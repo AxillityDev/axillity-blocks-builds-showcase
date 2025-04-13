@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         <a href="#" className="text-xl font-bold flex items-center gap-2">
           <img 
-            src="/lovable-uploads/e0a24cc7-6e60-43cc-b5cf-7513c800d21c.png" 
+            src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
             alt="Axillity Logo" 
             className="h-6 w-6"
           />
