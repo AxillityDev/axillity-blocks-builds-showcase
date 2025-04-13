@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="flex items-center mb-4 md:mb-0">
             <div className="mr-3 minecraft-container p-2">
               <img 
-                src="/src/images/skinmc-avatar.png" 
+                src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
                 alt="AxillityDev Logo" 
                 className="h-8 w-8 mr-2"
               />
