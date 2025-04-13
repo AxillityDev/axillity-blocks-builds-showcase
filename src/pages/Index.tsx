@@ -27,7 +27,7 @@ const Index = () => {
   }, []);
   
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'dark' : ''}`}>
+    <div className="min-h-screen">
       <Navbar />
       <HeroSection />
       <AboutSection />

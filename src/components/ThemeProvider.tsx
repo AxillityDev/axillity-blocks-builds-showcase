@@ -16,40 +16,31 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState('light');
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    // Check if user has a saved preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // Check system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
-    }
-    setMounted(true);
-  }, []);
-
+  // When theme changes, update the DOM
   useEffect(() => {
     if (!mounted) return;
     
     localStorage.setItem('theme', theme);
     
-    // Add a small transition class to the document element
-    document.documentElement.classList.add('theme-transition');
-    
+    // Apply dark class to html element for global dark mode
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-    
-    // Remove the transition class after the transition is complete
-    const transitionTimeout = setTimeout(() => {
-      document.documentElement.classList.remove('theme-transition');
-    }, 300);
-    
-    return () => clearTimeout(transitionTimeout);
   }, [theme, mounted]);
+
+  // On mount, load theme from localStorage or system preference
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+    setMounted(true);
+  }, []);
 
   // Prevent flash of wrong theme by hiding the content until mounted
   if (!mounted) {

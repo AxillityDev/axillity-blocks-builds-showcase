@@ -25,7 +25,14 @@ const HeroSection = () => {
       </div>
       
       <div className="absolute top-4 left-4 z-40 minecraft-place-block animate-minecraft-bounce">
-        <OpenMCLogo size="lg" />
+        <div className="p-2 minecraft-container flex items-center">
+          <img 
+            src="/lovable-uploads/10ee4cfa-1d95-47a7-b05a-efadbf04fdfe.png" 
+            alt="AxillityDev Logo" 
+            className="h-8 w-8 mr-2"
+          />
+          <span className="text-black dark:text-white">Axillity</span>
+        </div>
       </div>
       
       <div className="falling-blocks"></div>
@@ -51,7 +58,7 @@ const HeroSection = () => {
             View My Work
           </a>
           <a 
-            href="https://github.com/OpenMC" 
+            href="https://github.com/AxillityDev" 
             target="_blank" 
             rel="noopener noreferrer"
             className="minecraft-btn bg-secondary text-secondary-foreground minecraft-place-block delay-200"

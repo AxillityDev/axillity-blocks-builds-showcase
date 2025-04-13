@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Pickaxe, Code, User, Mail } from 'lucide-react';
+import { Code, User, Mail } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
 
 const Navbar = () => {
@@ -10,7 +10,11 @@ const Navbar = () => {
     <nav className={`fixed top-0 z-50 w-full py-3 minecraft-container ${theme === 'dark' ? 'dark' : ''}`}>
       <div className="container mx-auto flex items-center justify-between px-4">
         <a href="#" className="text-xl font-bold flex items-center gap-2">
-          <Pickaxe className="h-6 w-6 text-primary" />
+          <img 
+            src="/lovable-uploads/e0a24cc7-6e60-43cc-b5cf-7513c800d21c.png" 
+            alt="Axillity Logo" 
+            className="h-6 w-6"
+          />
           <span className="text-black dark:text-white">Axillity</span>
         </a>
         
