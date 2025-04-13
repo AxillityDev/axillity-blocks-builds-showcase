@@ -27,7 +27,7 @@ const HeroSection = () => {
       <div className="absolute top-4 left-4 z-40 minecraft-place-block animate-minecraft-bounce">
         <div className="p-2 minecraft-container flex items-center">
           <img 
-            src="/lovable-uploads/10ee4cfa-1d95-47a7-b05a-efadbf04fdfe.png" 
+            src="/src/images/skinmc-avatar.png" 
             alt="AxillityDev Logo" 
             className="h-8 w-8 mr-2"
           />
