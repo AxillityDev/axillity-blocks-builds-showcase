@@ -1,80 +1,74 @@
 
 import React from 'react';
-import { Check, Code, Youtube, Pick, Blocks } from 'lucide-react';
+import { Code, Server, Database } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AboutSection = () => {
-  // Minecraft skills
-  const skills = [
-    "Java Plugin Development", 
-    "Spigot/Paper API", 
-    "Custom Game Mechanics",
-    "Server Management",
-    "Mod Integration",
-    "Performance Optimization"
-  ];
-  
   return (
-    <section id="about" className="py-20 dirt-bg text-white px-4 relative">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold mb-6 minecraft-text">About Me</h2>
-            <div className="space-y-4">
-              <p className="minecraft-build delay-100">
-                I'm a passionate Minecraft developer with over 5 years of experience creating custom plugins,
-                game mechanics, and server experiences. My journey began with simple command plugins and has evolved
-                into developing complex gameplay systems that enhance the Minecraft experience.
-              </p>
-              <p className="minecraft-build delay-200">
-                I specialize in developing unique gameplay features that keep players engaged and excited about
-                your Minecraft server. Whether you need custom mobs with special abilities, innovative game mechanics,
-                or complete mini-games, I can bring your creative vision to life with clean, optimized code.
-              </p>
-              <p className="minecraft-build delay-300">
-                Beyond writing code, I'm deeply involved in the Minecraft community, contributing to open-source
-                projects and collaborating with content creators to develop plugins that power their creative videos.
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap gap-6 mt-8">
-              <div className="minecraft-container p-4 w-full sm:w-auto text-black hover:scale-105 transition-transform hover-block minecraft-place-block">
-                <div className="flex items-center gap-2 mb-2">
-                  <Code className="h-5 w-5 text-primary" />
-                  <span className="font-bold">OpenMC Contributor</span>
-                </div>
-                <p className="text-sm">Active contributor to the OpenMC plugin ecosystem</p>
+    <section id="about" className="py-20 stone-bg">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-white minecraft-text mb-4">About Me</h2>
+          <p className="text-white max-w-2xl mx-auto">
+            I'm a passionate Minecraft developer with expertise in creating custom plugins, mods, and server solutions.
+            With years of experience in Java and the Bukkit/Spigot/Paper ecosystem, I specialize in bringing creative ideas to life.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="minecraft-container hover-block minecraft-build delay-100">
+            <CardHeader>
+              <div className="flex justify-center mb-4">
+                <Code size={48} className="text-primary minecraft-bounce" />
               </div>
-              
-              <div className="minecraft-container p-4 w-full sm:w-auto text-black hover:scale-105 transition-transform hover-block minecraft-place-block delay-200">
-                <div className="flex items-center gap-2 mb-2">
-                  <Youtube className="h-5 w-5 text-primary" />
-                  <span className="font-bold">Creatoreq</span>
-                </div>
-                <p className="text-sm">Custom plugins for YouTube videos</p>
+              <CardTitle className="text-center">Plugin Development</CardTitle>
+              <CardDescription className="text-center">Custom Minecraft Solutions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-center">
+                I create custom Spigot/Paper plugins tailored to your exact specifications, from simple utility plugins to complex game mechanics.
+              </p>
+            </CardContent>
+            <CardFooter className="flex justify-center">
+              <span className="text-sm text-muted-foreground">Java | Kotlin | Spigot API</span>
+            </CardFooter>
+          </Card>
+
+          <Card className="minecraft-container hover-block minecraft-build delay-200">
+            <CardHeader>
+              <div className="flex justify-center mb-4">
+                <Server size={48} className="text-primary minecraft-bounce" />
               </div>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
-              {skills.map((skill, index) => (
-                <div key={index} className={`flex items-center gap-2 minecraft-build delay-${index * 100}`}>
-                  <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span>{skill}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="order-1 md:order-2">
-            <div className="minecraft-container p-4 hover:scale-105 transition-transform minecraft-3d-rotate hover-block">
-              <img 
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=800" 
-                alt="Minecraft Development" 
-                className="w-full h-auto pixelated" 
-              />
-              <div className="absolute -top-6 -left-6 w-12 h-12 grass-bg minecraft-container minecraft-bounce"></div>
-              <div className="absolute -bottom-8 -right-8 w-16 h-16 stone-bg minecraft-container minecraft-bounce delay-300"></div>
-            </div>
-          </div>
+              <CardTitle className="text-center">Server Setup</CardTitle>
+              <CardDescription className="text-center">Optimized Minecraft Servers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-center">
+                I set up and configure high-performance Minecraft servers with custom plugins, optimizations, and security measures.
+              </p>
+            </CardContent>
+            <CardFooter className="flex justify-center">
+              <span className="text-sm text-muted-foreground">Paper | Velocity | Docker</span>
+            </CardFooter>
+          </Card>
+
+          <Card className="minecraft-container hover-block minecraft-build delay-300">
+            <CardHeader>
+              <div className="flex justify-center mb-4">
+                <Database size={48} className="text-primary minecraft-bounce" />
+              </div>
+              <CardTitle className="text-center">Database Integration</CardTitle>
+              <CardDescription className="text-center">Data-Driven Solutions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-center">
+                I implement robust database solutions to store player data, server statistics, and game information securely and efficiently.
+              </p>
+            </CardContent>
+            <CardFooter className="flex justify-center">
+              <span className="text-sm text-muted-foreground">MySQL | MongoDB | Redis</span>
+            </CardFooter>
+          </Card>
         </div>
       </div>
     </section>

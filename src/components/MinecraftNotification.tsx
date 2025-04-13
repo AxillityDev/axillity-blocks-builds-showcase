@@ -35,7 +35,7 @@ export const MinecraftNotification = ({
           `}></div>
           <span>{title}</span>
         </div>
-      ),
+      ) as unknown as string,
       description: description,
       duration: duration,
       className: "minecraft-container border-2 border-black",

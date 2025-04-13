@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { GithubIcon, TwitterIcon, LinkedinIcon } from 'lucide-react';
-import OpenMCLogo from './OpenMCLogo';
+import { GithubIcon, TwitterIcon, LinkedinIcon, CodeIcon } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -9,10 +8,10 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center mb-4 md:mb-0">
-            <div className="mr-3">
-              <OpenMCLogo size="sm" />
+            <div className="mr-3 minecraft-container p-2">
+              <CodeIcon className="h-6 w-6 text-primary minecraft-pulse" />
             </div>
-            <span className="text-lg font-bold">OpenMC Dev</span>
+            <span className="text-lg font-bold">AxillityDev</span>
           </div>
           
           <div className="flex flex-col md:flex-row items-center mb-4 md:mb-0">
@@ -23,13 +22,13 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-4">
-            <a href="https://github.com" className="hover:text-primary transition-colors">
+            <a href="https://github.com/AxillityDev" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               <GithubIcon className="w-5 h-5" />
             </a>
-            <a href="https://twitter.com" className="hover:text-primary transition-colors">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               <TwitterIcon className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com" className="hover:text-primary transition-colors">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               <LinkedinIcon className="w-5 h-5" />
             </a>
           </div>
@@ -37,7 +36,7 @@ const Footer = () => {
         
         <div className="text-center mt-8">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} OpenMC Development. All rights reserved.
+            © {new Date().getFullYear()} Axillity Development. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground mt-1">
             Made with 💚 using React and Minecraft-inspired design

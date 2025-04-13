@@ -99,6 +99,23 @@
   .minecraft-btn {
     @apply bg-[#548A34] border-[#3d6825] border-2 p-2 rounded-lg text-white transition-all;
   }
+  
+  /* Minecraft-styled switch */
+  .minecraft-switch [data-state="checked"] {
+    @apply bg-[#3d6825] border-[#548A34];
+  }
+  
+  .minecraft-switch [data-state="unchecked"] {
+    @apply bg-[#777] border-[#555];
+  }
+  
+  .minecraft-switch [data-state="checked"] .bg-background {
+    @apply bg-[#76c65c];
+  }
+  
+  .minecraft-switch [data-state="unchecked"] .bg-background {
+    @apply bg-[#ddd];
+  }
 }
 
 /* Dark mode overrides */
@@ -174,11 +191,31 @@
   100% { transform: rotateY(0deg) translateY(0); }
 }
 
+@keyframes minecraft-dig {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg) scale(0.95); }
+  75% { transform: rotate(15deg) scale(0.95); }
+}
+
+@keyframes minecraft-place-block {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes minecraft-build {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
 /* Animation classes */
 .minecraft-shake { animation: minecraft-shake 0.5s ease infinite; }
 .minecraft-bounce { animation: minecraft-bounce 1s ease infinite; }
 .minecraft-pulse { animation: minecraft-pulse 2s ease infinite; }
 .minecraft-3d-rotate { animation: minecraft-3d-rotate 20s infinite linear; transform-style: preserve-3d; }
+.minecraft-dig { animation: minecraft-dig 0.8s ease infinite; }
+.minecraft-place-block { animation: minecraft-place-block 0.3s ease forwards; }
+.minecraft-build { animation: minecraft-build 0.5s ease forwards; }
 
 /* Responsive improvements */
 @media (max-width: 640px) {

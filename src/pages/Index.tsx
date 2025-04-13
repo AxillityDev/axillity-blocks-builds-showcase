@@ -8,6 +8,7 @@ import AboutSection from '@/components/sections/AboutSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import { showMinecraftNotification } from '@/components/MinecraftNotification';
+import CornerThemeToggle from '@/components/CornerThemeToggle';
 
 const Index = () => {
   const { theme } = useTheme();
@@ -33,6 +34,7 @@ const Index = () => {
       <ProjectsSection />
       <ContactSection />
       <Footer />
+      <CornerThemeToggle />
     </div>
   );
 };
