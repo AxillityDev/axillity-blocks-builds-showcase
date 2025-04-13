@@ -35,6 +35,5 @@ import { Code, User, Mail } from 'lucide-react';
       </div>
     </nav>
   );
-};
 
 export default Navbar;
