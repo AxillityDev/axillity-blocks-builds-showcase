@@ -11,15 +11,17 @@ const Navbar = () => {
   };
   
   return (
-    <nav className="fixed top-0 z-50 w-full py-3 minecraft-container-dark">
+    <nav className="fixed top-0 z-50 w-full py-3 bg-[#222222] border-b border-[#333333]">
       <div className="container mx-auto flex items-center justify-between px-4">
         <a href="#" className="text-xl font-bold flex items-center gap-2">
-          <img 
-            src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
-            alt="Axillity Logo" 
-            className="h-8 w-8 minecraft-place-block"
-          />
-          <span className="text-white">Axillity</span>
+          <div className="minecraft-container p-2">
+            <img 
+              src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
+              alt="Axillity Logo" 
+              className="h-8 w-8"
+            />
+          </div>
+          <span className="text-white ml-2">Axillity</span>
         </a>
         
         {/* Desktop Navigation */}

@@ -1,7 +1,7 @@
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
-type Theme = 'light' | 'dark';
+type Theme = 'dark';
 
 interface ThemeContextType {
   theme: Theme;
@@ -11,32 +11,16 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>('light'); // Default to light theme
+  const [theme] = useState<Theme>('dark'); // Fixed to dark theme only
 
-  // Initialize theme from localStorage if available
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('minecraft-theme') as Theme | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // Set default based on user's preferred color scheme
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
-    }
+  // Update document when component mounts
+  React.useEffect(() => {
+    document.documentElement.classList.add('dark');
   }, []);
 
-  // Update document when theme changes
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('minecraft-theme', theme);
-  }, [theme]);
-
+  // Dummy toggle function (won't actually change the theme)
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    // Empty function as we're always in dark mode
   };
 
   return (

@@ -6,13 +6,10 @@ import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
-import { useTheme } from '@/hooks/use-theme';
 
 const Index = () => {
-  const { theme } = useTheme();
-  
   return (
-    <div className={`min-h-screen font-minecraft ${theme === 'dark' ? 'dark bg-background text-white' : 'bg-background text-gray-800'}`}>
+    <div className="min-h-screen font-minecraft dark bg-background text-white">
       <Navbar />
       <main>
         <HeroSection />

@@ -2,10 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowDown, Gamepad2, Github } from 'lucide-react';
 import OpenMCLogo from '@/components/OpenMCLogo';
-import { useTheme } from '@/hooks/use-theme';
 
 const HeroSection = () => {
-  const { theme } = useTheme();
   const [showAchievement, setShowAchievement] = useState(true);
   
   // Hide achievement after 5 seconds
@@ -18,7 +16,7 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className={`pt-20 pb-16 ${theme === 'dark' ? 'stone-bg' : 'light-grass-bg'} text-white relative`}>      
+    <section className="pt-20 pb-16 stone-bg text-white relative">      
       {/* Minecraft achievement */}
       {showAchievement && (
         <div className="fixed top-4 right-4 z-50 animate-minecraft-slide-right">
@@ -51,7 +49,7 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <p className="text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto mb-10 relative z-20">
+        <p className="text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto mb-10 relative z-20 text-white">
           I create immersive experiences and innovative plugins for Minecraft servers.
         </p>
         
@@ -74,7 +72,7 @@ const HeroSection = () => {
         
         <div className="mt-16 animate-minecraft-bounce">
           <a href="#about" className="inline-block hover:text-primary transition-colors">
-            <ArrowDown className="h-6 w-6" />
+            <ArrowDown className="h-6 w-6 text-white" />
           </a>
         </div>
         

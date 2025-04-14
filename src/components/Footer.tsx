@@ -8,14 +8,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center mb-4 md:mb-0">
-            <div className="mr-3 minecraft-container p-2">
+            <div className="minecraft-container p-2">
               <img 
                 src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
                 alt="AxillityDev Logo" 
-                className="h-8 w-8 mr-2"
+                className="h-8 w-8"
               />
             </div>
-            <span className="text-lg font-bold">Axillity</span>
+            <span className="text-lg font-bold ml-3">Axillity</span>
           </div>
           
           <div className="flex flex-col md:flex-row items-center mb-4 md:mb-0">
