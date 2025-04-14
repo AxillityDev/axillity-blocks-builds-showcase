@@ -9,7 +9,7 @@ const MinecraftThemeToggle = () => {
   const isDark = theme === 'dark';
   
   return (
-    <div className="flex items-center gap-2 minecraft-container p-2">
+    <div className={`flex items-center gap-2 ${isDark ? 'minecraft-container-dark' : 'minecraft-container'} p-2`}>
       <Switch 
         checked={isDark}
         onCheckedChange={toggleTheme}

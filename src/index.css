@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,10 +37,23 @@
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --primary: 143 64% 34%;
-    --secondary: 26 90% 47%;
-    --muted: 240 3.7% 25.9%;
     --card: 240 10% 4.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 143 64% 34%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 26 90% 47%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 25.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
@@ -56,6 +68,15 @@
     image-rendering: pixelated;
     overflow-x: hidden;
   }
+
+  .dark {
+    @apply text-white;
+  }
+
+  /* Light theme adjustments */
+  .light-theme-text {
+    @apply text-gray-800;
+  }
 }
 
 @layer components {
@@ -69,6 +90,10 @@
 
   .minecraft-btn {
     @apply bg-[#92cb7e] border-[#76a764] border-2 p-2 rounded-lg text-[#3d5936] transition-all hover:brightness-110 active:brightness-90 active:translate-y-0.5;
+  }
+  
+  .dark .minecraft-btn {
+    @apply text-[#e8ffe3];
   }
   
   /* Minecraft-styled switch */
@@ -90,9 +115,8 @@
   
   /* Minecraft achievement */
   .minecraft-achievement {
-    @apply fixed top-4 left-4 z-50 flex items-center p-2 pr-4 gap-2 minecraft-container 
-    bg-[#1f1f1f] text-white shadow-[inset_-2px_-2px_0_0_#000000,inset_2px_2px_0_0_#555555]
-    animate-[minecraft-place-block_0.3s_ease_forwards,minecraft-slide-right_5s_ease_forwards];
+    @apply border-2 border-black bg-[#1f1f1f] text-white shadow-[inset_-2px_-2px_0_0_#000000,inset_2px_2px_0_0_#555555]
+    animate-minecraft-slide-right;
   }
   
   .achievement-icon {
@@ -189,10 +213,10 @@
 }
 
 @keyframes minecraft-slide-right {
-  0% { transform: translateX(-100%); opacity: 0; }
+  0% { transform: translateX(100%); opacity: 0; }
   5% { transform: translateX(0); opacity: 1; }
   90% { transform: translateX(0); opacity: 1; }
-  100% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(100%); opacity: 0; }
 }
 
 /* Animation classes */
@@ -203,6 +227,7 @@
 .minecraft-dig { animation: minecraft-dig 0.8s ease infinite; }
 .minecraft-place-block { animation: minecraft-place-block 0.3s ease forwards; }
 .minecraft-build { animation: minecraft-build 0.5s ease forwards; }
+.animate-minecraft-slide-right { animation: minecraft-slide-right 5s ease-out forwards; }
 
 /* Responsive improvements */
 @media (max-width: 640px) {
@@ -271,5 +296,31 @@
 }
 
 .dark .minecraft-btn {
-  @apply bg-[#2e6a22] border-[#1a3d13];
+  @apply bg-[#2e6a22] border-[#1a3d13] text-[#e8ffe3];
+}
+
+/* Light mode adjustments for text contrast */
+.light .minecraft-btn {
+  @apply text-[#3d5936];
+}
+
+.light h1, .light h2, .light h3, .light p {
+  @apply text-gray-800;
+}
+
+.dark h1, .dark h2, .dark h3, .dark p {
+  @apply text-gray-100;
+}
+
+/* Achievement display */
+.minecraft-achievement {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  max-width: 300px;
 }

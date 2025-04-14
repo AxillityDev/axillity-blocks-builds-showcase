@@ -18,6 +18,10 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const savedTheme = localStorage.getItem('minecraft-theme') as Theme | null;
     if (savedTheme) {
       setTheme(savedTheme);
+    } else {
+      // Set default based on user's preferred color scheme
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
     }
   }, []);
 

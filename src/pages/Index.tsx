@@ -12,12 +12,14 @@ const Index = () => {
   const { theme } = useTheme();
   
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'dark' : ''}`}>
+    <div className={`min-h-screen font-minecraft ${theme === 'dark' ? 'dark text-white' : 'text-gray-800'}`}>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-      <ContactSection />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   );

@@ -1,22 +1,34 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowDown, Gamepad2, Github } from 'lucide-react';
 import OpenMCLogo from '@/components/OpenMCLogo';
 import { useTheme } from '@/hooks/use-theme';
 
 const HeroSection = () => {
   const { theme } = useTheme();
+  const [showAchievement, setShowAchievement] = useState(true);
+  
+  // Hide achievement after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAchievement(false);
+    }, 5000);
+    
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
     <section className={`pt-36 pb-16 ${theme === 'dark' ? 'stone-bg' : 'light-grass-bg'} text-white relative`}>      
       {/* Static minecraft achievement */}
-      <div className="minecraft-achievement">
-        <div className="achievement-icon">!</div>
-        <div className="flex flex-col">
-          <div className="text-sm font-bold">Website Loaded!</div>
-          <div className="text-xs">Welcome to my Portfolio!</div>
+      {showAchievement && (
+        <div className="fixed top-4 right-4 z-50 flex items-center p-2 pr-4 gap-2 minecraft-container minecraft-achievement">
+          <div className="achievement-icon">!</div>
+          <div className="flex flex-col">
+            <div className="text-sm font-bold">Website Loaded!</div>
+            <div className="text-xs">Welcome to my Portfolio!</div>
+          </div>
         </div>
-      </div>
+      )}
       
       <div className="absolute top-4 left-4 z-40 minecraft-place-block animate-minecraft-bounce hidden">
         <div className="p-2 minecraft-container flex items-center">
