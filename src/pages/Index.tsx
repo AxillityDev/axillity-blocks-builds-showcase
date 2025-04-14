@@ -12,7 +12,7 @@ const Index = () => {
   const { theme } = useTheme();
   
   return (
-    <div className={`min-h-screen font-minecraft ${theme === 'dark' ? 'dark text-white' : 'text-gray-800'}`}>
+    <div className={`min-h-screen font-minecraft ${theme === 'dark' ? 'dark bg-background text-white' : 'bg-background text-gray-800'}`}>
       <Navbar />
       <main>
         <HeroSection />

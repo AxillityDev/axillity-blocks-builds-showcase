@@ -18,30 +18,17 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className={`pt-36 pb-16 ${theme === 'dark' ? 'stone-bg' : 'light-grass-bg'} text-white relative`}>      
-      {/* Static minecraft achievement */}
+    <section className={`pt-20 pb-16 ${theme === 'dark' ? 'stone-bg' : 'light-grass-bg'} text-white relative`}>      
+      {/* Minecraft achievement */}
       {showAchievement && (
-        <div className="fixed top-4 right-4 z-50 flex items-center p-2 pr-4 gap-2 minecraft-container minecraft-achievement">
-          <div className="achievement-icon">!</div>
-          <div className="flex flex-col">
-            <div className="text-sm font-bold">Website Loaded!</div>
-            <div className="text-xs">Welcome to my Portfolio!</div>
-          </div>
+        <div className="fixed top-4 right-4 z-50 animate-minecraft-slide-right">
+          <img 
+            src="https://skinmc.net/achievement/7/Website+Loaded%21/Welcome+to+my+Portfolio%21" 
+            alt="Achievement unlocked" 
+            className="h-auto w-64"
+          />
         </div>
       )}
-      
-      <div className="absolute top-4 left-4 z-40 minecraft-place-block animate-minecraft-bounce hidden">
-        <div className="p-2 minecraft-container flex items-center">
-          <img 
-            src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
-            alt="Axillity" 
-            className="h-8 w-8 mr-2"
-          />
-          <span className="text-white">Axillity</span>
-        </div>
-      </div>
-      
-      <div className="falling-blocks"></div>
       
       <div className="container mx-auto text-center px-4 relative z-10">
         <div className="inline-block minecraft-container px-4 py-2 mb-6 animate-minecraft-bounce shadow-lg">
@@ -51,9 +38,18 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 minecraft-text relative z-20">
-          Hey, I'm <span className="text-primary animate-minecraft-pulse">Axillity</span>
-        </h1>
+        <div className="flex flex-col items-center justify-center">
+          <div className="flex items-center gap-4 mb-6">
+            <img 
+              src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
+              alt="Axillity" 
+              className="h-16 w-16 minecraft-place-block"
+            />
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold minecraft-text relative z-20">
+              <span className="text-white">Hey, I'm</span> <span className="text-primary animate-minecraft-pulse">Axillity</span>
+            </h1>
+          </div>
+        </div>
         
         <p className="text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto mb-10 relative z-20">
           I create immersive experiences and innovative plugins for Minecraft servers.

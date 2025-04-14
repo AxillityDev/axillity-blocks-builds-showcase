@@ -22,7 +22,9 @@ const MinecraftThemeToggle = () => {
         ) : (
           <Sun className="h-4 w-4 text-yellow-500" />
         )}
-        <span className="text-xs">{isDark ? 'Night' : 'Day'}</span>
+        <span className={`text-xs ${isDark ? 'text-white' : 'text-gray-800'}`}>
+          {isDark ? 'Night' : 'Day'}
+        </span>
       </div>
     </div>
   );

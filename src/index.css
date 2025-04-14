@@ -112,16 +112,6 @@
   .minecraft-switch [data-state="unchecked"] .bg-background {
     @apply bg-[#f0f0f0];
   }
-  
-  /* Minecraft achievement */
-  .minecraft-achievement {
-    @apply border-2 border-black bg-[#1f1f1f] text-white shadow-[inset_-2px_-2px_0_0_#000000,inset_2px_2px_0_0_#555555]
-    animate-minecraft-slide-right;
-  }
-  
-  .achievement-icon {
-    @apply w-10 h-10 bg-[#cb00a2] flex items-center justify-center text-xl font-bold;
-  }
 }
 
 /* Block textures for light theme */
@@ -228,6 +218,32 @@
 .minecraft-place-block { animation: minecraft-place-block 0.3s ease forwards; }
 .minecraft-build { animation: minecraft-build 0.5s ease forwards; }
 .animate-minecraft-slide-right { animation: minecraft-slide-right 5s ease-out forwards; }
+
+/* Dark mode styles */
+.dark .minecraft-container {
+  @apply bg-[#444444] shadow-[inset_-2px_-2px_0_0_#222222,inset_2px_2px_0_0_#666666];
+}
+
+.dark .minecraft-container-dark {
+  @apply bg-[#222222] shadow-[inset_-2px_-2px_0_0_#111111,inset_2px_2px_0_0_#444444];
+}
+
+.dark .minecraft-btn {
+  @apply bg-[#2e6a22] border-[#1a3d13] text-[#e8ffe3];
+}
+
+/* Light mode adjustments for text contrast */
+.light .minecraft-btn {
+  @apply text-[#3d5936];
+}
+
+.light h1, .light h2, .light h3, .light p {
+  @apply text-gray-800;
+}
+
+.dark h1, .dark h2, .dark h3, .dark p {
+  @apply text-gray-100;
+}
 
 /* Responsive improvements */
 @media (max-width: 640px) {
