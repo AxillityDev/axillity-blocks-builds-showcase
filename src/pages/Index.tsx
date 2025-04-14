@@ -7,8 +7,11 @@ import AboutSection from '@/components/sections/AboutSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import { showMinecraftNotification } from '@/components/MinecraftNotification';
+import { useTheme } from '@/hooks/use-theme';
 
 const Index = () => {
+  const { theme } = useTheme();
+  
   useEffect(() => {
     // Show a welcome notification when the page loads
     const timer = setTimeout(() => {
@@ -23,7 +26,7 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen">
+    <div className={`min-h-screen ${theme === 'dark' ? 'dark' : ''}`}>
       <Navbar />
       <HeroSection />
       <AboutSection />

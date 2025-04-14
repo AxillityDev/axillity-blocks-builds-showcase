@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { ArrowDown, Gamepad2, Github } from 'lucide-react';
 import OpenMCLogo from '@/components/OpenMCLogo';
 import { showMinecraftNotification } from '@/components/MinecraftNotification';
+import { useTheme } from '@/hooks/use-theme';
 
 const HeroSection = () => {
   const [showWelcome, setShowWelcome] = useState(false);
+  const { theme } = useTheme();
   
   useEffect(() => {
     // Show welcome notification after a short delay
@@ -18,12 +20,12 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className="pt-36 pb-16 grass-bg text-white relative">      
+    <section className={`pt-36 pb-16 ${theme === 'dark' ? 'stone-bg' : 'grass-bg'} text-white relative`}>      
       <div className="absolute top-4 left-4 z-40 minecraft-place-block animate-minecraft-bounce">
         <div className="p-2 minecraft-container flex items-center">
           <img 
             src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
-            alt="AxillityDev Logo" 
+            alt="Axillity" 
             className="h-8 w-8 mr-2"
           />
           <span className="text-white">Axillity</span>

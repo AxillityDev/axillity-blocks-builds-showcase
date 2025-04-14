@@ -28,18 +28,18 @@ export const MinecraftNotification = ({
       title: (
         <div className="flex items-center gap-2">
           <div className={`
-            w-4 h-4 rounded-sm minecraft-place-block
+            w-5 h-5 rounded-sm minecraft-place-block
             ${type === 'achievement' ? 'bg-yellow-500' : ''}
             ${type === 'info' ? 'bg-blue-500' : ''}
             ${type === 'warning' ? 'bg-orange-500' : ''}
             ${type === 'error' ? 'bg-red-500' : ''}
           `}></div>
-          <span>{title}</span>
+          <span className="font-bold">{title}</span>
         </div>
       ) as unknown as string,
       description: description,
       duration: duration,
-      className: "minecraft-container border-2 border-black",
+      className: "minecraft-container border-2 border-black shadow-[inset_-2px_-2px_0_0_#333333,inset_2px_2px_0_0_#777777]",
     });
   }, [toast, title, description, type, duration]);
   

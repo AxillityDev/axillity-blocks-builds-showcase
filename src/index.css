@@ -34,6 +34,15 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
     --radius: 0;
   }
+  
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 143 64% 34%;
+    --secondary: 26 90% 47%;
+    --muted: 240 3.7% 25.9%;
+    --card: 240 10% 4.9%;
+  }
 }
 
 @layer base {
@@ -59,7 +68,7 @@
   }
 
   .minecraft-btn {
-    @apply bg-[#317526] border-[#1e4016] border-2 p-2 rounded-lg text-white transition-all;
+    @apply bg-[#317526] border-[#1e4016] border-2 p-2 rounded-lg text-white transition-all hover:brightness-110 active:brightness-90 active:translate-y-0.5;
   }
   
   /* Minecraft-styled switch */
@@ -211,4 +220,17 @@
   .minecraft-btn {
     padding: 0.75rem 1.25rem;
   }
+}
+
+/* Dark mode styles */
+.dark .minecraft-container {
+  @apply bg-[#444444] shadow-[inset_-2px_-2px_0_0_#222222,inset_2px_2px_0_0_#666666];
+}
+
+.dark .minecraft-container-dark {
+  @apply bg-[#222222] shadow-[inset_-2px_-2px_0_0_#111111,inset_2px_2px_0_0_#444444];
+}
+
+.dark .minecraft-btn {
+  @apply bg-[#2e6a22] border-[#1a3d13];
 }

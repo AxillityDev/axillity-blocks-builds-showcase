@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Code, User, Mail, Menu, X } from 'lucide-react';
+import MinecraftThemeToggle from './MinecraftThemeToggle';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,13 +11,13 @@ const Navbar = () => {
   };
   
   return (
-    <nav className="fixed top-0 z-50 w-full py-3 minecraft-container dark">
+    <nav className="fixed top-0 z-50 w-full py-3 minecraft-container-dark">
       <div className="container mx-auto flex items-center justify-between px-4">
         <a href="#" className="text-xl font-bold flex items-center gap-2">
           <img 
             src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
             alt="Axillity Logo" 
-            className="h-6 w-6"
+            className="h-8 w-8 minecraft-place-block"
           />
           <span className="text-white">Axillity</span>
         </a>
@@ -37,11 +38,22 @@ const Navbar = () => {
           </a>
         </div>
         
+        {/* Theme Toggle (Desktop) */}
+        <div className="hidden md:flex items-center gap-4">
+          <MinecraftThemeToggle />
+          
+          {/* Contact Button */}
+          <a href="#contact" className="minecraft-btn">
+            Get In Touch
+          </a>
+        </div>
+        
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center gap-2">
+          <MinecraftThemeToggle />
           <button 
             onClick={toggleMobileMenu}
-            className="text-white p-2"
+            className="text-white p-2 minecraft-container"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -51,11 +63,6 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        
-        {/* Contact Button (Desktop) */}
-        <a href="#contact" className="minecraft-btn hidden md:block">
-          Get In Touch
-        </a>
       </div>
       
       {/* Mobile Menu */}
