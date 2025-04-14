@@ -1,27 +1,24 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ArrowDown, Gamepad2, Github } from 'lucide-react';
 import OpenMCLogo from '@/components/OpenMCLogo';
-import { showMinecraftNotification } from '@/components/MinecraftNotification';
 import { useTheme } from '@/hooks/use-theme';
 
 const HeroSection = () => {
-  const [showWelcome, setShowWelcome] = useState(false);
   const { theme } = useTheme();
   
-  useEffect(() => {
-    // Show welcome notification after a short delay
-    const timer = setTimeout(() => {
-      setShowWelcome(true);
-      showMinecraftNotification('Welcome to Minecraft Portfolio!', 'Explore my work and projects', 'achievement');
-    }, 1500);
-    
-    return () => clearTimeout(timer);
-  }, []);
-  
   return (
-    <section className={`pt-36 pb-16 ${theme === 'dark' ? 'stone-bg' : 'grass-bg'} text-white relative`}>      
-      <div className="absolute top-4 left-4 z-40 minecraft-place-block animate-minecraft-bounce">
+    <section className={`pt-36 pb-16 ${theme === 'dark' ? 'stone-bg' : 'light-grass-bg'} text-white relative`}>      
+      {/* Static minecraft achievement */}
+      <div className="minecraft-achievement">
+        <div className="achievement-icon">!</div>
+        <div className="flex flex-col">
+          <div className="text-sm font-bold">Website Loaded!</div>
+          <div className="text-xs">Welcome to my Portfolio!</div>
+        </div>
+      </div>
+      
+      <div className="absolute top-4 left-4 z-40 minecraft-place-block animate-minecraft-bounce hidden">
         <div className="p-2 minecraft-container flex items-center">
           <img 
             src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
