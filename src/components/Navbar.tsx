@@ -1,10 +1,13 @@
 
 import React, { useState } from 'react';
-import { Code, User, Mail, Menu, X } from 'lucide-react';
+import { User, Mail, Menu, X, Code } from 'lucide-react';
 import MinecraftThemeToggle from './MinecraftThemeToggle';
+import LanguageSwitch from './LanguageSwitch';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
   
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -28,30 +31,32 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-6">
           <a href="#about" className="flex items-center gap-2 text-white border-b-2 border-transparent hover:border-primary transition-colors">
             <User className="h-4 w-4" />
-            <span>About</span>
+            <span>{t('nav', 'about')}</span>
           </a>
           <a href="#projects" className="flex items-center gap-2 text-white border-b-2 border-transparent hover:border-primary transition-colors">
             <Code className="h-4 w-4" />
-            <span>Projects</span>
+            <span>{t('nav', 'projects')}</span>
           </a>
           <a href="#contact" className="flex items-center gap-2 text-white border-b-2 border-transparent hover:border-primary transition-colors">
             <Mail className="h-4 w-4" />
-            <span>Contact</span>
+            <span>{t('nav', 'contact')}</span>
           </a>
         </div>
         
-        {/* Theme Toggle (Desktop) */}
+        {/* Theme Toggle and Language Switch (Desktop) */}
         <div className="hidden md:flex items-center gap-4">
+          <LanguageSwitch />
           <MinecraftThemeToggle />
           
           {/* Contact Button */}
           <a href="#contact" className="minecraft-btn">
-            Get In Touch
+            {t('nav', 'getInTouch')}
           </a>
         </div>
         
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitch />
           <MinecraftThemeToggle />
           <button 
             onClick={toggleMobileMenu}
@@ -73,18 +78,18 @@ const Navbar = () => {
           <div className="flex flex-col gap-4">
             <a href="#about" className="flex items-center gap-2 text-white py-2 px-3 hover:bg-[#444] rounded-lg transition-colors">
               <User className="h-5 w-5" />
-              <span>About</span>
+              <span>{t('nav', 'about')}</span>
             </a>
             <a href="#projects" className="flex items-center gap-2 text-white py-2 px-3 hover:bg-[#444] rounded-lg transition-colors">
               <Code className="h-5 w-5" />
-              <span>Projects</span>
+              <span>{t('nav', 'projects')}</span>
             </a>
             <a href="#contact" className="flex items-center gap-2 text-white py-2 px-3 hover:bg-[#444] rounded-lg transition-colors">
               <Mail className="h-5 w-5" />
-              <span>Contact</span>
+              <span>{t('nav', 'contact')}</span>
             </a>
             <a href="#contact" className="minecraft-btn text-center mt-2">
-              Get In Touch
+              {t('nav', 'getInTouch')}
             </a>
           </div>
         </div>

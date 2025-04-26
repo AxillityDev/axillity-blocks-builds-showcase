@@ -1,9 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import { ArrowDown, Gamepad2, Github } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
   const [showAchievement, setShowAchievement] = useState(true);
+  const { t } = useLanguage();
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -51,7 +52,7 @@ const HeroSection = () => {
         <div className="inline-block minecraft-container px-4 py-2 mb-6 animate-minecraft-bounce">
           <div className="flex items-center gap-2 text-white">
             <Gamepad2 className="h-4 w-4" />
-            <span className="animate-minecraft-pulse">Minecraft Developer</span>
+            <span className="animate-minecraft-pulse">{t('hero', 'role')}</span>
           </div>
         </div>
         
@@ -63,19 +64,19 @@ const HeroSection = () => {
               className="h-16 w-16 animate-minecraft-bounce"
             />
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold minecraft-text relative z-20">
-              <span className="text-white">Hey, I'm</span>{" "}
+              <span className="text-white">{t('hero', 'greeting')}</span>{" "}
               <span className="text-primary animate-minecraft-pulse">Axillity</span>
             </h1>
           </div>
         </div>
         
         <p className="text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto mb-10 relative z-20 text-white">
-          I create immersive experiences and innovative plugins for Minecraft servers.
+          {t('hero', 'description')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-20">
           <a href="#projects" className="minecraft-btn animate-minecraft-bounce">
-            View My Work
+            {t('hero', 'viewWork')}
           </a>
           <a 
             href="https://github.com/AxillityDev" 
