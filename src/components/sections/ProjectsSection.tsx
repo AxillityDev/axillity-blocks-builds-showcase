@@ -11,7 +11,7 @@ const ProjectsSection = () => {
       description: "Contributing to the OpenMC project with custom plugins and server optimization for the Minecraft community.",
       imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy2tLNkVSFhpMZ_Ren4nqLAjJ2gztaUmJB1g&s",
       tags: ["Java", "Open Source", "Game Design", "GitHub"],
-      githubUrl: "https://github.com/ServeurOpenMC/",
+      githubUrl: "https://github.com/ServerOpenMC/PluginV2",
     },
     {
       title: "Creatoreq",

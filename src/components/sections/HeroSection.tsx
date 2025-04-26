@@ -14,7 +14,7 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className="pt-20 pb-16 stone-bg text-white relative overflow-hidden">      
+    <section className="pt-20 pb-16 text-white relative overflow-hidden">      
       {/* Achievement notification */}
       {showAchievement && (
         <div className="fixed top-4 right-4 z-50 animate-minecraft-slide-right">
@@ -28,13 +28,14 @@ const HeroSection = () => {
       
       {/* Minecraft animated background */}
       <div className="absolute inset-0 stone-bg opacity-50"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
+      <div className="absolute inset-0 dirt-bg opacity-30"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent"></div>
       
       <div className="container mx-auto text-center px-4 relative z-10">
-        <div className="inline-block minecraft-container px-4 py-2 mb-6">
+        <div className="inline-block minecraft-container px-4 py-2 mb-6 animate-minecraft-bounce">
           <div className="flex items-center gap-2 text-white">
             <Gamepad2 className="h-4 w-4" />
-            <span>Minecraft Developer</span>
+            <span className="animate-minecraft-pulse">Minecraft Developer</span>
           </div>
         </div>
         
