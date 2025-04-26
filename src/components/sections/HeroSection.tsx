@@ -14,7 +14,7 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className="pt-20 pb-16 text-white relative overflow-hidden">      
+    <section className="min-h-screen pt-32 pb-16 text-white relative overflow-hidden">      
       {/* Achievement notification */}
       {showAchievement && (
         <div className="fixed top-4 right-4 z-50 animate-minecraft-slide-right">
@@ -26,10 +26,19 @@ const HeroSection = () => {
         </div>
       )}
       
-      {/* Minecraft animated background */}
-      <div className="absolute inset-0 stone-bg opacity-50"></div>
-      <div className="absolute inset-0 dirt-bg opacity-30"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent"></div>
+      {/* Cherry Blossom background */}
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: 'url(https://motionbgs.com/cherry-blossom)',
+          filter: 'brightness(0.7)'
+        }}
+      ></div>
+      
+      {/* Minecraft animated background layers */}
+      <div className="absolute inset-0 stone-bg opacity-20"></div>
+      <div className="absolute inset-0 dirt-bg opacity-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-transparent"></div>
       
       <div className="container mx-auto text-center px-4 relative z-10">
         <div className="inline-block minecraft-container px-4 py-2 mb-6 animate-minecraft-bounce">
