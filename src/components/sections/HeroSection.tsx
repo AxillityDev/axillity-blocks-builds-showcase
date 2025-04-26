@@ -1,12 +1,10 @@
 
 import React, { useEffect, useState } from 'react';
 import { ArrowDown, Gamepad2, Github } from 'lucide-react';
-import OpenMCLogo from '@/components/OpenMCLogo';
 
 const HeroSection = () => {
   const [showAchievement, setShowAchievement] = useState(true);
   
-  // Hide achievement after 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAchievement(false);
@@ -16,8 +14,8 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className="pt-20 pb-16 stone-bg text-white relative">      
-      {/* Minecraft achievement */}
+    <section className="pt-20 pb-16 stone-bg text-white relative overflow-hidden">      
+      {/* Achievement notification */}
       {showAchievement && (
         <div className="fixed top-4 right-4 z-50 animate-minecraft-slide-right">
           <img 
@@ -28,23 +26,28 @@ const HeroSection = () => {
         </div>
       )}
       
+      {/* Minecraft animated background */}
+      <div className="absolute inset-0 stone-bg opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
+      
       <div className="container mx-auto text-center px-4 relative z-10">
-        <div className="inline-block minecraft-container px-4 py-2 mb-6 animate-minecraft-bounce shadow-lg">
+        <div className="inline-block minecraft-container px-4 py-2 mb-6">
           <div className="flex items-center gap-2 text-white">
             <Gamepad2 className="h-4 w-4" />
             <span>Minecraft Developer</span>
           </div>
         </div>
         
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex items-center gap-4 mb-6">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <div className="flex items-center gap-4">
             <img 
               src="https://i.ibb.co/3mJF8qLG/skinmc-avatar.png" 
               alt="Axillity" 
-              className="h-16 w-16 minecraft-place-block"
+              className="h-16 w-16 animate-minecraft-bounce"
             />
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold minecraft-text relative z-20">
-              <span className="text-white">Hey, I'm</span> <span className="text-primary animate-minecraft-pulse">Axillity</span>
+              <span className="text-white">Hey, I'm</span>{" "}
+              <span className="text-primary animate-minecraft-pulse">Axillity</span>
             </h1>
           </div>
         </div>
@@ -53,15 +56,15 @@ const HeroSection = () => {
           I create immersive experiences and innovative plugins for Minecraft servers.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
-          <a href="#projects" className="minecraft-btn minecraft-place-block">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-20">
+          <a href="#projects" className="minecraft-btn animate-minecraft-bounce">
             View My Work
           </a>
           <a 
             href="https://github.com/AxillityDev" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="minecraft-btn bg-secondary text-secondary-foreground minecraft-place-block delay-200"
+            className="minecraft-btn bg-secondary text-secondary-foreground animate-minecraft-bounce delay-200"
           >
             <div className="flex items-center gap-2">
               <Github className="h-5 w-5" />
@@ -70,23 +73,23 @@ const HeroSection = () => {
           </a>
         </div>
         
-        <div className="mt-16 animate-minecraft-bounce">
-          <a href="#about" className="inline-block hover:text-primary transition-colors">
+        <div className="mt-16">
+          <a href="#about" className="inline-block hover:text-primary transition-colors animate-minecraft-bounce">
             <ArrowDown className="h-6 w-6 text-white" />
           </a>
         </div>
         
         {/* Animated floating blocks */}
-        <div className="absolute -bottom-10 left-1/4 minecraft-bounce delay-300">
+        <div className="absolute bottom-10 left-1/4 animate-minecraft-bounce delay-300">
           <div className="w-8 h-8 dirt-bg minecraft-container"></div>
         </div>
-        <div className="absolute -bottom-16 right-1/4 minecraft-bounce delay-100">
+        <div className="absolute bottom-16 right-1/4 animate-minecraft-bounce delay-100">
           <div className="w-10 h-10 stone-bg minecraft-container"></div>
         </div>
-        <div className="absolute top-20 left-10 minecraft-bounce delay-500 hidden md:block">
+        <div className="absolute top-20 left-10 animate-minecraft-bounce delay-500 hidden md:block">
           <div className="w-6 h-6 wood-bg minecraft-container"></div>
         </div>
-        <div className="absolute top-40 right-10 minecraft-bounce delay-200 hidden md:block">
+        <div className="absolute top-40 right-10 animate-minecraft-bounce delay-200 hidden md:block">
           <div className="w-12 h-12 grass-bg minecraft-container"></div>
         </div>
       </div>
