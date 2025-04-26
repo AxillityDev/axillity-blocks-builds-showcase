@@ -26,14 +26,21 @@ const HeroSection = () => {
         </div>
       )}
       
-      {/* Cherry Blossom background */}
-      <div 
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+      {/* Cherry Blossom video background */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
         style={{ 
-          backgroundImage: 'url(https://motionbgs.com/cherry-blossom)',
-          filter: 'brightness(0.7)'
+          filter: 'brightness(0.7)',
+          zIndex: -1
         }}
-      ></div>
+      >
+        <source src="https://motionbgs.com/media/3227/cherry-blossom.960x540.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       
       {/* Minecraft animated background layers */}
       <div className="absolute inset-0 stone-bg opacity-20"></div>
